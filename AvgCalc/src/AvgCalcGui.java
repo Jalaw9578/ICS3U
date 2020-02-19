@@ -36,6 +36,7 @@ public class AvgCalcGui extends javax.swing.JFrame {
         Mark4in = new javax.swing.JTextField();
         Calcbut = new javax.swing.JButton();
         Outputlabel = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,32 +68,42 @@ public class AvgCalcGui extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("Tw Cen MT", 0, 24)); // NOI18N
+        jLabel5.setText("Average Calculator");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(73, 73, 73)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(Calcbut))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Outputlabel)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(Mark4in)
-                        .addComponent(Mark2in)
-                        .addComponent(Mark3in)
-                        .addComponent(Mark1in, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)))
-                .addContainerGap(110, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(Calcbut))
+                        .addGap(32, 32, 32)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Outputlabel)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Mark4in)
+                                .addComponent(Mark2in)
+                                .addComponent(Mark3in)
+                                .addComponent(Mark1in, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(jLabel5)))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(82, 82, 82)
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addGap(57, 57, 57)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(Mark1in, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -112,7 +123,7 @@ public class AvgCalcGui extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Calcbut)
                     .addComponent(Outputlabel))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
@@ -124,6 +135,9 @@ public class AvgCalcGui extends javax.swing.JFrame {
         double mark3 = Double.parseDouble(Mark3in.getText());
         double mark4 = Double.parseDouble(Mark4in.getText());
         double markavg = (mark1+mark2+mark3+mark4)/4;
+        markavg = markavg*10;
+        markavg = Math.round(markavg);
+        markavg = markavg/10;
         Outputlabel.setText ("Average mark: " + markavg);
         
     }//GEN-LAST:event_CalcbutActionPerformed
@@ -182,5 +196,6 @@ public class AvgCalcGui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }
